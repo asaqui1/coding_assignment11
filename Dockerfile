@@ -16,5 +16,9 @@ COPY saqui_ashley_site/ ./
 # Expose port 7775
 EXPOSE 7775
 
-# Start the development server on port 7775 and bind it to all network interfaces
-CMD ["npx", "react-scripts", "start", "--port", "7775", "--host", "0.0.0.0"]
+# Set environment variables for React
+ENV PORT=7775
+ENV HOST=0.0.0.0
+
+# Start the development server
+CMD ["npx", "react-scripts", "start", "--host", "0.0.0.0"]
